@@ -1,0 +1,26 @@
+/***** reguler ******/
+@font-face {
+    font-family: 'interface-regularuploadedfile';
+    src: url('../fonts/2d033a_0_0-webfont.eot');
+    src: url('../fonts/2d033a_0_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/2d033a_0_0-webfont.woff2') format('woff2'),
+         url('../fonts/2d033a_0_0-webfont.woff') format('woff'),
+         url('../fonts/2d033a_0_0-webfont.ttf') format('truetype'),
+         url('../fonts/2d033a_0_0-webfont.svg#interface-regularuploadedfile') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/***** thin ******/
+@font-face {
+    font-family: 'interface-thinuploaded_file';
+    src: url('../fonts/2d033a_1_0-webfont.eot');
+    src: url('../fonts/2d033a_1_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/2d033a_1_0-webfont.woff2') format('woff2'),
+         url('../fonts/2d033a_1_0-webfont.woff') format('woff'),
+         url('../fonts/2d033a_1_0-webfont.ttf') format('truetype'),
+         url('../fonts/2d033a_1_0-webfont.svg#interface-thinuploaded_file') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

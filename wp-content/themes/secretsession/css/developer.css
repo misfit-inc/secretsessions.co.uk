@@ -1,0 +1,41 @@
+.error{
+	color:#F00;
+	padding:0 0 20px 0 !important;
+	font-size:16px;
+	letter-spacing:1px;
+	font-family: 'interface-regularuploadedfile';
+}
+.message{
+	color:#3C6;
+	padding:0 0 20px 0;
+	font-size:16px;
+	letter-spacing:1px;
+	font-family: 'interface-regularuploadedfile';
+}
+.register-error{
+	 text-align:center; 
+}
+#signup h1.entry-title{
+	display:none;
+}
+.post-5 h1.entry-title{
+	display:none;
+}
+.error a{
+	display:none;
+}
+#finalcount{
+	 float:right !important;	
+}
+
+h1.entry-title{display:none !important;}
+.wpcf7-validation-errors{
+	display:none;
+}
+span.wpcf7-not-valid-tip{
+	display:block;
+	text-align:center;
+	font-size:16px !important;
+	padding-top:10px;
+	letter-spacing:1px;
+}
