@@ -195,6 +195,7 @@ if (count($home_images) > 0) {
          <a href="javascript:void(0);" class="show_more" id="show_more">Show more</a>-->
     <!-- </div>
 </div>  -->
+
 <!-- selected artists -->
 <div class="selected_artists most_share_artist">
     <div class="container">
@@ -265,6 +266,108 @@ if (count($home_images) > 0) {
         <a href="javascript:void(0);" class="show_more" id="show_more_artist">Show more</a>
     </div>
 </div>
+
+<!-- news -->
+<div class="news">
+    <div class="container">
+        <h2 class="">News</h2>
+        
+        <div class="row" id="news_row">
+
+            <div class="news_thumb col-sm-6">
+                <div class="news_image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/artist_thumb_04.jpg);"></div>
+
+                <a class="title" href="#">Article Title</a><br>
+                <span>8th July 2015</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+
+                <div class="read_more_container">
+                    <a class="read_more" href="#">read more</a>
+                </div>
+            </div>
+
+        </div>    
+
+        <div class="loader" id="loader_news"></div>
+        <a href="javascript:void(0);" class="show_more" id="show_more_news">Show more</a>
+    </div>
+</div>
+
+<!-- featured videos -->
+<div class="featured_videos">
+    <div class="container">
+        <h2 class="">New Videos</h2>
+
+        <div class="row" id="videos_row">
+            <?php
+            if (count($videos) > 0) {
+                foreach ($videos as $vid) {
+                    $url = $vid->video_image;
+                    $parts = parse_url($url);
+                    $str = $parts['path'];
+                    $rootPath = $_SERVER['DOCUMENT_ROOT'];
+                    $image_path = $rootPath . $str;
+                    $arg1 = pathinfo($image_path);
+                    $new_path = $arg1['dirname'] . '/show_video_small_' . $arg1['basename'];
+                    if (!file_exists($new_path)) {
+                        $params = array('width' => 380, 'height' => 214, 'aspect_ratio' => true, 'rgb' => '0x000000', 'crop' => true);
+                        img_resize($image_path, $new_path, $params);
+                    }
+                    $url_parts = explode('/', $url);
+                    $url_count = count($url_parts);
+                    $url_parts[$url_count - 1] = 'show_video_small_' . $url_parts[$url_count - 1];
+                    $new_image_path = implode("/", $url_parts);
+
+                    ?>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="video_thumb">
+                            <a href="<?php echo add_query_arg('vid', $vid->id, get_permalink(get_page_by_path('show-video-2'))); ?>"
+                               title="">
+                                <span>play video</span>
+                                <img src="<?php echo $new_image_path; ?>" alt="" class="img-responsive">
+                            </a>
+                            <a href="<?php echo add_query_arg('vid', $vid->id, get_permalink(get_page_by_path('show-video-2'))); ?>"
+                               class="title" title=""><?php
+                                echo stripslashes(character_limiter($vid->video_title, 15));
+                                ?></a>
+
+                            <p>by
+
+                                <?php
+                                if ($vid->user_id != 0) {
+                                    ?>
+                                    <?php
+                                    $user_url_name = get_cimyFieldValue($vid->user_id, 'URL_NAME');
+                                    if (!empty($user_url_name)) {
+                                        $user_link = home_url("artist/$user_url_name");
+                                    } else {
+                                        $user_link = add_query_arg('user_id', $vid->user_id, get_permalink(get_page_by_path('user-profile-view')));
+                                    }
+                                    ?>
+                                    <a href="<?php echo $user_link; ?>"
+                                       class="artist_name" title="">
+                                        <?php echo stripslashes(character_limiter(get_cimyFieldValue($vid->user_id, 'NAME'), 15)); ?>
+                                    </a>
+                                <?php
+                                } else {
+                                    ?>
+                                    <?php echo stripslashes(character_limiter($vid->ss_artist_name, 15)); ?>
+                                <?php
+                                }
+                                ?>
+
+                            </p>
+                        </div>
+                    </div>
+                <?php
+                }
+            }
+            ?>
+        </div>
+         <div class="loader" id="loader"></div>
+         <a href="javascript:void(0);" class="show_more" id="show_more">Show more</a>
+    </div>
+</div> 
 
 <!-- featured videos -->
 <!-- <div class="featured_videos">

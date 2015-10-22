@@ -106,7 +106,6 @@ p, h1, h2, h3, h4, h5, h6 {
 .header_cont a.open-menu-btn:hover {
 	background-position: -10px -28px;
 }
-
 .hero_header {
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -114,36 +113,30 @@ p, h1, h2, h3, h4, h5, h6 {
 	height: calc(100vh - 60px);
 	width: 100%;
 }
-
 .hero_header .container {
 	position: relative;
 	height: 100%;
 }
-
 .hero_text {
 	position: absolute;
 	top: 200px;
 }
-
 .hero_header h1 {
 	letter-spacing: 4px;
     line-height: 70px;
 	font-size: 80px;
 	color: #fff;
 }
-
 .hero_header p {
 	font-size: 26px;
 	color: #fff;
 }
-
 .hero_button {
 	position: absolute;
 	text-align: center;
 	bottom: 20px;
 	width: 100%;
 }
-
 .hero_button a {
 	font-size: 24px;
 	color: #fff;
@@ -527,6 +520,48 @@ a.show_more:hover{
 .most_share_artist {
 	padding:73px 0 0 0;
 	border-top:1px solid #e4d9d9;
+}
+
+/*news*/
+.news {
+	border-bottom: 1px solid #e4d9d9;
+	margin-bottom: 78px;
+}
+.news h2 {
+	padding-bottom: 58px;
+	letter-spacing: 1px;
+	line-height: 24px;
+	font-size: 30px;
+}
+.news_image {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 0 10px 0;
+	height: 300px;
+	width: 100%;
+}
+.news_thumb a.title {
+	max-height: 22px;
+	letter-spacing: 1px;
+	font-size: 20px;
+	line-height: 22px;
+	font-family: 'interface-regularuploadedfile' !important;
+}
+.news_thumb span {
+	font-style: italic;
+	font-size: 18px;
+}
+.news_thumb p {
+	font-size: 18px;
+}
+.read_more_container {
+	text-align: right;
+}
+.news_thumb .read_more {
+	text-decoration: underline;
+	font-style: italic;
+	font-size: 16px;
 }
 
 /*featured videos*/
