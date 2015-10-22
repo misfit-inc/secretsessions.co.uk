@@ -2,6 +2,8 @@
 .htaccess
 sitemap.xml
 sitemap.xml.gz
+ss_uploads_01062015.tar.gz
+uploads.tar.gz
 wp-config.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
