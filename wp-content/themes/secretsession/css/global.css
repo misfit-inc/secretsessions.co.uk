@@ -107,6 +107,48 @@ p, h1, h2, h3, h4, h5, h6 {
 	background-position: -10px -28px;
 }
 
+.hero_header {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: calc(100vh - 60px);
+	width: 100%;
+}
+
+.hero_header .container {
+	position: relative;
+	height: 100%;
+}
+
+.hero_text {
+	position: absolute;
+	top: 200px;
+}
+
+.hero_header h1 {
+	letter-spacing: 4px;
+    line-height: 70px;
+	font-size: 80px;
+	color: #fff;
+}
+
+.hero_header p {
+	font-size: 26px;
+	color: #fff;
+}
+
+.hero_button {
+	position: absolute;
+	text-align: center;
+	bottom: 20px;
+	width: 100%;
+}
+
+.hero_button a {
+	font-size: 24px;
+	color: #fff;
+}
+
 /*overlay menu*/
 .overlay_menu {
 	position: fixed;

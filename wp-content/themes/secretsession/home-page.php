@@ -67,7 +67,7 @@ if (count($home_images) > 0) {
     <?php
     } else {
         ?>
-        <div id="thumb-grid" class="thumb-grid-hover">
+        <!-- <div id="thumb-grid" class="thumb-grid-hover">
             <ul id="side">
                 <?php
                 $field_id = get_cimyFieldValue_fun('PROFILE_PHOTO');
@@ -100,6 +100,20 @@ if (count($home_images) > 0) {
                 }
                 ?>
             </ul>
+        </div> -->
+        <div class="hero_header" style="background-image: url(<?php bloginfo('template_url'); ?>/images/artist_video_img.jpg);">
+            <div class="container">
+                <div class="hero_text">
+                    <h1>Bringing<br>opportunities<br>to musicians</h1>
+                    <p>Using fan power to bring real life opportunities<br>to the musicians that you love.</p>
+                </div>
+
+                <div class="hero_button">
+                    <a href="#">Get involved<br>
+                    <img src="<?php bloginfo('template_url'); ?>/images/arrow-down.png">
+                    </a>
+                </div>
+            </div>
         </div>
     <?php
     }
@@ -107,7 +121,7 @@ if (count($home_images) > 0) {
 ?>
 
 <!-- featured videos -->
-<div class="featured_videos">
+<!-- <div class="featured_videos">
     <div class="container">
         <h2 class="">New Videos</h2>
 
@@ -179,8 +193,8 @@ if (count($home_images) > 0) {
         </div>
         <!-- <div class="loader" id="loader"></div>
          <a href="javascript:void(0);" class="show_more" id="show_more">Show more</a>-->
-    </div>
-</div>
+    <!-- </div>
+</div>  -->
 <!-- selected artists -->
 <div class="selected_artists most_share_artist">
     <div class="container">
@@ -253,7 +267,7 @@ if (count($home_images) > 0) {
 </div>
 
 <!-- featured videos -->
-<div class="featured_videos">
+<!-- <div class="featured_videos">
     <div class="container">
         <h2 class="">Most Liked</h2>
 
@@ -324,7 +338,7 @@ if (count($home_images) > 0) {
         <div class="loader" id="liked_loader"></div>
         <a href="javascript:void(0);" class="show_more" id="liked_show_more">Show more</a>
     </div>
-</div>
+</div> -->
 </div>
 <!-- wrapper end -->
 <script type="text/javascript" src="<?php echo get_bloginfo('template_url'); ?>/js/modernizr.js"></script>
