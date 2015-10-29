@@ -728,6 +728,7 @@ a.show_more:hover{
 
 .recent-whole-texts {
 	padding: 0 30px;
+	opacity: 1;
 }
 
 .recent-whole .read-container {
@@ -736,6 +737,13 @@ a.show_more:hover{
     width: 100%;
 	opacity: 0;
 	top: 0;
+
+
+
+	transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
 }
 
 .recent-whole .read-container a {
@@ -780,13 +788,6 @@ a.show_more:hover{
 .recent-half-texts {
 	padding: 0 30px;
 	opacity: 1
-
-
-
-	transition: all 0.4s ease-in-out;
-	-o-transition: all 0.4s ease-in-out;
-	-moz-transition: all 0.4s ease-in-out;
-	-webkit-transition: all 0.4s ease-in-out;
 }
 
 .recent-half .read-container {
@@ -795,6 +796,13 @@ a.show_more:hover{
     width: 100%;
 	opacity: 0;
 	top: 0;
+
+
+
+	transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
 }
 
 .recent-half .read-container a {
