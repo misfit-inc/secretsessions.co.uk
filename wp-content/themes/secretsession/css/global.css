@@ -47,6 +47,10 @@ p, h1, h2, h3, h4, h5, h6 {
 	font-weight: 300;
 }
 
+.clear {
+	clear: both;
+}
+
 /*main sprite*/
 .fb_ico, .twitter_ico, .insta_ico, .ftr_ss_logo, .verified, .open-menu-btn, .search_ico, 
 .login_ftr_ss_logo, .login_fb_ico, .login_twitter_ico, .login_insta_ico {
@@ -562,6 +566,365 @@ a.show_more:hover{
 	text-decoration: underline;
 	font-style: italic;
 	font-size: 16px;
+}
+
+/*blog*/
+.page-template-page-blog-php .selected_artists {
+	border-top: 1px solid #e4d9d9;
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+.blog-hero .container {
+	padding: 220px 0 0 0;
+	max-width: 1200px;
+	width: 90%;
+}
+
+.blog-hero {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: 60px;
+	height: 450px;
+	width: 100%;
+}
+
+.blog-hero h1,
+.blog-hero .hero-cat,
+.blog-hero .hero-aut,
+.blog-hero .hero-date {
+	color: #fff;
+}
+
+.blog-hero .hero-cat {
+	font-size: 22px;
+}
+
+.blog-hero h1 {
+	padding: 30px 0 10px 0;
+	font-size: 46px;
+}
+
+.blog-hero .hero-aut {
+	display: inline-block;
+    padding: 0 0 5px 0;
+	font-size: 22px;
+}
+
+.blog-hero .hero-date {
+	font-size: 18px;
+}
+
+.blog-posts {
+    border-right: 1px solid #e4d9d9;
+	float: left;
+	width: 70%;
+}
+
+.blog-sidebar {
+	float: right;
+	width: 30%;
+}
+
+.blog-content {
+	padding: 40px 0 0 0;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 80%;
+}
+
+	.blog-content ul li {
+		margin-right: 20px;
+		display: inline;
+		font-size: 14px;
+	}
+
+	.blog-content ul li a {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	    padding: 10px;
+	}
+
+	.blog-content p {
+		font-size: 16px;
+		width: 80%;
+	}
+
+.blog-readmore {
+    padding: 20px 0 45px 0;
+    display: inline-block;
+    font-size: 24px;
+    color: #ff6450;
+}
+
+.fb-share a {
+ 	border-bottom-left-radius: 10%;
+	border-top-left-radius: 10%;
+    background-color: #3c5aa3;
+    border: 1px solid #3c5aa3;
+    color: #fff;
+}
+
+.fb-share span {
+	border-bottom: 1px solid #3c5aa3;
+	border-bottom-right-radius: 10%;
+	border-right: 1px solid #3c5aa3;
+    border-top: 1px solid #3c5aa3;
+    border-top-right-radius: 10%;
+    letter-spacing: 2px;
+    color: #3c5aa3;
+    padding: 10px;
+}
+
+.tweet a {
+ 	border-bottom-left-radius: 10%;
+	border-top-left-radius: 10%;
+    background-color: #59adeb;
+    border: 1px solid #59adeb;
+    color: #fff;
+}
+
+.tweet span {
+	border-bottom: 1px solid #59adeb;
+	border-bottom-right-radius: 10%;
+	border-right: 1px solid #59adeb;
+    border-top: 1px solid #59adeb;
+    border-top-right-radius: 10%;
+    letter-spacing: 2px;
+    color: #59adeb;
+    padding: 10px;
+}
+
+.recent-posts {
+	text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 82%;
+}
+
+.recent-posts .recent-cat,
+.recent-posts h3,
+.recent-posts .hero-aut,
+.recent-posts .hero-date {
+	color: #fff;
+}
+
+	.recent-posts h2 {
+	    padding: 60px 0 30px 0;
+		text-align: left;
+		font-size: 40px;
+	}
+
+.recent-whole {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	text-align: left;
+	height: 400px;
+	width: 100%;
+}
+
+.recent-whole-texts {
+	padding: 0 30px;
+}
+
+.recent-whole .read-container {
+	position: absolute;
+	height: 100%;
+    width: 100%;
+	opacity: 0;
+	top: 0;
+}
+
+.recent-whole .read-container a {
+	padding: 190px 0 0 0;
+	text-align: center;
+	font-size: 22px;
+	display: block;
+	height: 100%;
+	color: #fff;
+}
+
+	.recent-whole:hover .recent-whole-texts {
+		opacity: 0;
+	}
+	
+	.recent-whole:hover .read-container {
+		background-color: #f16553;
+		opacity: 1;
+	}
+
+.recent-whole h3 {
+	padding: 30px 0 10px;
+	font-size: 38px;
+}
+
+.recent-whole .recent-cat {
+	display: inline-block;
+	padding-top: 200px;
+	font-size: 20px;
+}
+
+.recent-half {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	text-align: left;
+	margin-top: 2%;
+	height: 350px;
+}
+
+.recent-half-texts {
+	padding: 0 30px;
+	opacity: 1
+
+
+
+	transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+}
+
+.recent-half .read-container {
+	position: absolute;
+	height: 100%;
+    width: 100%;
+	opacity: 0;
+	top: 0;
+}
+
+.recent-half .read-container a {
+	padding: 160px 0 0 0;
+	text-align: center;
+	font-size: 22px;
+	display: block;
+	height: 100%;
+	color: #fff;
+}
+
+	.recent-half:hover .recent-half-texts {
+		opacity: 0;
+	}
+	
+	.recent-half:hover .read-container {
+		background-color: #f16553;
+		opacity: 1;
+	}
+
+.recent-half .recent-cat {
+	display: inline-block;
+	padding-top: 180px;
+	font-size: 20px;
+}
+
+.recent-half h3 {
+	padding: 30px 0 10px;
+	font-size: 38px;
+}
+
+.recent-half1 {
+	margin-right: 2%;
+    float: left;
+    width: 50%;
+}
+
+.recent-half2 {
+	float: left;
+	width: calc(50% - 2%);
+}
+
+.show-recent-posts {
+	display: inline-block;
+    padding: 50px 0;
+    font-size: 24px;
+}
+
+.blog-social {
+    text-align: center;
+    margin: 0 auto;
+	width: 80%;
+}
+
+.blog-social h3 {
+	padding: 0 0 30px 0;
+	font-size: 38px;
+}
+
+.blog-social ul li {
+	padding: 0px 5px;
+	display: inline;
+}
+
+.blog-social img {
+	width: 65px;
+}
+
+.blog-categories {
+	text-align: center;
+}
+
+.blog-categories h3 {
+	padding: 0 0 20px 0;
+	font-size: 38px;
+}
+
+.blog-categories ul li {
+	padding: 30px 0;
+}
+
+	.blog-categories ul li a {
+		font-size: 18px;
+	}
+
+.blog-categories .show-categories {
+	font-size: 24px;
+}
+
+.blog-newsletter {
+	text-align: center;
+}
+
+.blog-newsletter h3 {
+	padding: 50px 0;
+	font-size: 38px;
+}
+
+#name,
+#email {
+	background-color: #cecece;
+	margin: 0 0 5px 0;
+}
+
+#submit-newsletter {
+	background-color: #ff8373;
+}
+
+#name,
+#email,
+#submit-newsletter {
+	font-size: 18px;
+	padding: 30px;
+	color: #fff;
+	width: 100%;
+}
+
+#name::-webkit-input-placeholder,
+#email::-webkit-input-placeholder {
+	color: #fff;
+}
+
+#name:-moz-placeholder,
+#email:-moz-placeholder {
+	color: #fff;
+}
+
+#name:-ms-input-placeholder,
+#email:-ms-input-placeholder {
+	color: #fff;
 }
 
 /*featured videos*/

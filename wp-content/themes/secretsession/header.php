@@ -40,7 +40,7 @@
     <meta property="og:description" content="Secret Sessions - a music discovery platform that puts artists and their fans in control. Turning musical talent into industry success." /> 
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class( $class ); ?> >
 <script>
 <!--
  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
