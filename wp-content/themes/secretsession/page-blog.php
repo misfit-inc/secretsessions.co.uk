@@ -67,9 +67,10 @@ $home_images = $wpdb->get_row($sql);
                 );
                 if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); 
             ?> 
-        
-                <?php the_excerpt(); ?>
-           
+                <div class="text-container">
+                    <?php the_excerpt(); ?>
+                </div>
+
             <a href="<?php the_permalink(); ?>" class="blog-readmore">Read More</a>
 
             <ul>
