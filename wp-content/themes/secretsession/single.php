@@ -11,18 +11,6 @@ get_header();
 
 if (is_singular('post')) {
 
-?>
-
-    <?php
-/*
-Template Name: Blog
- *
- * @package WordPress
- * @subpackage Secret Session
- * @since Secret Session
- */
-get_header();
-
 $user_limit = 5;
 $user_page = 0 * $user_limit;
 $video_limit = 3;
@@ -160,9 +148,6 @@ $home_images = $wpdb->get_row($sql);
     </div>
 
 </div>
-
-<?php get_footer(); ?>
-    
 
 <?php } else { ?>
     <!-- wrapper start -->
