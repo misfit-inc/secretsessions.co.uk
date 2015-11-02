@@ -32,25 +32,15 @@ $home_images = $wpdb->get_row($sql);
 
 ?>
 
-<?php 
-    $query = new WP_Query(
-        array (
-            'post_type' => 'post',
-            'showposts' => '1'
-        )
-    );
-    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");  
-    $category = get_the_category();    
-?>   
-<div class="blog-hero" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
-    <div class="container">     
-        <span class="hero-cat"><?php echo $category[0]->cat_name; ?></span>
-        <h1><?php the_title(); ?></h1>
-        <span class="hero-aut">by <?php the_author(); ?></span><br>
-        <span class="hero-date"><?php the_time('m/d/Y'); ?></span>
+
+<div class="blog-hero" style="background-image: url(<?php bloginfo('template_url'); ?>/images/artist_thumb_31.jpg);">
+    <div class="container">        
+        <span class="hero-cat">Category</span>
+        <h1>Blog Name</h1>
+        <span class="hero-aut">by Author Name</span><br>
+        <span class="hero-date">10/19/15</span>
     </div>
 </div>
-<?php endwhile; endif; wp_reset_postdata(); ?>
 
 <div class="clear"></div>
 
@@ -58,85 +48,92 @@ $home_images = $wpdb->get_row($sql);
 
     <div style="border-bottom: 1px solid #e4d9d9; padding-bottom: 50px;">
         <div class="blog-content">
-            <?php 
-                $query = new WP_Query(
-                    array (
-                        'post_type' => 'post',
-                        'showposts' => '1'
-                    )
-                );
-                if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); 
-            ?> 
-        
-                <?php the_excerpt(); ?>
-           
-            <a href="<?php the_permalink(); ?>" class="blog-readmore">Read More</a>
+            <p>
+                Lorem ipsum 300 character limit dolor sit amet, 
+                consectetuer adipiscing elit, sed diam nonummy 
+                nibh euismod tincidunt ut laoreet dolore magna 
+                aliquam erat volutpat. Ut wisi enim ad minim veniam, 
+                quis nostrud exerci tation ullamcorper suscipit 
+                lobortis nisl ut aliquip ex ea commodo.
+            </p>
+
+            <a href="#" class="blog-readmore">Read More</a>
 
             <ul>
                 <li class="fb-share"><a href="#">Share</a><span>200</span></li>
                 <li class="tweet"><a href="#">Tweet</a><span>100</span></li>
                 <li>Share the love</li>
             </ul>
-            <?php endwhile; endif; wp_reset_postdata(); ?>
         </div>
     </div>
 
     <div class="recent-posts">
         <h2>Recent Posts</h2>
 
-        <?php 
-            $query = new WP_Query(
-                array (
-                    'post_type' => 'post',
-                    'showposts' => '5',
-                    'offset' => '1'
-                )
-            );
-            $counter = 1;
-            if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");  
-            $category = get_the_category();   
-            if ($counter == 1) {
-        ?> 
-            <div class="recent-whole" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
-                <div class="recent-whole-texts">    
-                    <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
-                    <h3><?php the_title(); ?></h3>
-                    <span class="hero-aut">by <?php the_author(); ?></span><br>
-                    <span class="hero-date"><?php the_time('m/d/Y'); ?></span>
-                </div>    
+        <div class="recent-whole" style="background-image: url(<?php bloginfo('template_url'); ?>/images/post-whole.jpg);">
+            <div class="recent-whole-texts">    
+                <span class="recent-cat">Category</span>
+                <h3>Blog Name</h3>
+                <span class="hero-aut">by Author Name</span><br>
+                <span class="hero-date">10/19/15</span>
+            </div>    
 
-                <div class="read-container">
-                    <a href="<?php the_permalink(); ?>">Read</a>
-                </div>
+            <div class="read-container">
+                <a href="#">Read</a>
             </div>
-        <?php } else if (($counter > 1) && ($counter % 2 == 0)) { ?>    
-            <div class="recent-half1 recent-half" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
-                <div class="recent-whole-texts">    
-                    <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
-                    <h3><?php the_title(); ?></h3>
-                    <span class="hero-aut">by <?php the_author(); ?></span><br>
-                    <span class="hero-date"><?php the_time('m/d/Y'); ?></span>
-                </div>    
+        </div>
 
-                <div class="read-container">
-                    <a href="<?php the_permalink(); ?>">Read</a>
-                </div>
-            </div>
-        <?php } else { ?>    
-            <div class="recent-half2 recent-half" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
-                <div class="recent-whole-texts">    
-                    <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
-                    <h3><?php the_title(); ?></h3>
-                    <span class="hero-aut">by <?php the_author(); ?></span><br>
-                    <span class="hero-date"><?php the_time('m/d/Y'); ?></span>
-                </div>    
-
-                <div class="read-container">
-                    <a href="<?php the_permalink(); ?>">Read</a>
-                </div>
+        <div class="recent-half1 recent-half" style="background-image: url(<?php bloginfo('template_url'); ?>/images/post-half1.jpg);">
+            <div class="recent-half-texts">
+                <span class="recent-cat">Category</span>
+                <h3>Blog Name</h3>
+                <span class="hero-aut">by Author Name</span><br>
+                <span class="hero-date">10/19/15</span>
             </div>
 
-        <?php } $counter++; endwhile; endif; wp_reset_postdata(); ?>
+            <div class="read-container">
+                <a href="#">Read</a>
+            </div>
+        </div>
+
+        <div class="recent-half2 recent-half" style="background-image: url(<?php bloginfo('template_url'); ?>/images/post-half2.jpg);">
+            <div class="recent-half-texts">
+                <span class="recent-cat">Category</span>
+                <h3>Blog Name</h3>
+                <span class="hero-aut">by Author Name</span><br>
+                <span class="hero-date">10/19/15</span>
+            </div>
+
+            <div class="read-container">
+                <a href="#">Read</a>
+            </div>
+        </div>
+
+        <div class="recent-half1 recent-half" style="background-image: url(<?php bloginfo('template_url'); ?>/images/post-half3.jpg);">
+            <div class="recent-half-texts">
+                <span class="recent-cat">Category</span>
+                <h3>Blog Name</h3>
+                <span class="hero-aut">by Author Name</span><br>
+                <span class="hero-date">10/19/15</span>
+            </div>
+
+            <div class="read-container">
+                <a href="#">Read</a>
+            </div>
+        </div>
+
+        <div class="recent-half2 recent-half" style="background-image: url(<?php bloginfo('template_url'); ?>/images/post-whole.jpg);">
+            <div class="recent-half-texts">
+                <span class="recent-cat">Category</span>
+                <h3>Blog Name</h3>
+                <span class="hero-aut">by Author Name</span><br>
+                <span class="hero-date">10/19/15</span>
+            </div>
+
+            <div class="read-container">
+                <a href="#">Read</a>
+            </div>
+        </div>
 
         <div class="clear"></div>
 
