@@ -22,7 +22,7 @@ if (is_singular('post')) {
         <span class="hero-cat"><?php echo $category[0]->cat_name; ?></span>
         <h1><?php the_title(); ?></h1>
         <p class="hero-aut">by <span><?php the_author(); ?></span></p>
-        <p class="hero-date"><?php the_time('m/d/Y'); ?></p>
+        <p class="hero-date"><?php the_time('m/d/y'); ?></p>
     </div>
 </div>
 <?php endwhile; endif; wp_reset_query(); ?>
@@ -115,9 +115,7 @@ if (is_singular('post')) {
 
                     )
                 );
-
                 if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
-
             ?>
                 <div class="col-md-3 col-sm-3 col-xs-6 col-md-15">
                     <div class="author-thumb">
@@ -126,7 +124,7 @@ if (is_singular('post')) {
                         </a>
                         <a href="<?php the_permalink(); ?>" class="title"><?php the_title(); ?></a>
                         <p>by <span><?php the_author(); ?></span></p>
-                        <p><?php the_time('m/d/Y'); ?></p>
+                        <p><?php the_time('m/d/y'); ?></p>
                     </div>
                 </div>    
             <?php endwhile; endif; wp_reset_postdata(); ?>    

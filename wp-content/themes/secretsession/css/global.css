@@ -817,7 +817,7 @@ a.show_more:hover{
 	
 	.recent-whole:hover .read-container {
 		background-color: #f16553;
-		opacity: 1;
+		opacity: 0.8;
 	}
 
 .recent-whole h3 {

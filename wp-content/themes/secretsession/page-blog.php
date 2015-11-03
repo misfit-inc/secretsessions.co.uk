@@ -12,7 +12,7 @@ $user_limit = 5;
 $user_page = 0 * $user_limit;
 $video_limit = 3;
 $video_page = 0 * $video_limit;
-$liked_video_limit = 6;
+$liked_video_limit = 3;
 $liked_video_page = 0 * $video_limit;
 $type = 'sescret_session_home';// custom content type
 $args = array('post_type' => $type, 'post_status' => 'publish');
@@ -103,7 +103,7 @@ $home_images = $wpdb->get_row($sql);
                     <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
                     <h3><?php the_title(); ?></h3>
                     <p class="hero-aut">by <span><?php the_author(); ?></span></p>
-                    <p class="hero-date"><?php the_time('m/d/Y'); ?></p>
+                    <p class="hero-date"><?php the_time('m/d/y'); ?></p>
                 </div>    
 
                 <div class="read-container">
@@ -116,7 +116,7 @@ $home_images = $wpdb->get_row($sql);
                     <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
                     <h3><?php the_title(); ?></h3>
                     <p class="hero-aut">by <span><?php the_author(); ?></span></p>
-                    <p class="hero-date"><?php the_time('m/d/Y'); ?></p>
+                    <p class="hero-date"><?php the_time('m/d/y'); ?></p>
                 </div>    
 
                 <div class="read-container">
@@ -129,7 +129,7 @@ $home_images = $wpdb->get_row($sql);
                     <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
                     <h3><?php the_title(); ?></h3>
                     <p class="hero-aut">by <span><?php the_author(); ?></span></p>
-                    <p class="hero-date"><?php the_time('m/d/Y'); ?></p>
+                    <p class="hero-date"><?php the_time('m/d/y'); ?></p>
                 </div>    
 
                 <div class="read-container">
@@ -173,7 +173,7 @@ $home_images = $wpdb->get_row($sql);
                 <li><a href="#">Category 6</a></li>
                 <li><a href="#">Category 7</a></li>
             </ul> -->
-            
+
             <?php 
                 $args = array('title_li' => __( ' ' ));
                 wp_list_categories($args); 
@@ -199,7 +199,7 @@ $home_images = $wpdb->get_row($sql);
 
 <div class="selected_artists most_share_artist">
     <div class="container">
-        <h2 class="">Featured Artists</h2>
+        <h2 class="">Artists you might like</h2>
 
         <div class="row fadeInUp" id="more_artist">
             <?php $i = 0;

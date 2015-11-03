@@ -107,12 +107,6 @@ if (count($home_images) > 0) {
                     <h1>Bringing<br>opportunities<br>to musicians</h1>
                     <p>Using fan power to bring real life opportunities<br>to the musicians that you love.</p>
                 </div>
-
-                <div class="hero_button">
-                    <a href="#">Get involved<br>
-                    <img src="<?php bloginfo('template_url'); ?>/images/arrow-down.png">
-                    </a>
-                </div>
             </div>
         </div>
     <?php
@@ -273,33 +267,29 @@ if (count($home_images) > 0) {
         <h2 class="">News</h2>
         
         <div class="row" id="news_row">
+            <?php 
+                $query = new WP_Query(
+                    array(
+                        'post_type' => 'post',
+                        'showposts' => 2
+                    )
+                );
+                if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+            ?>
+                <div class="news_thumb col-sm-6">
+                    <div class="news_image" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 
-            <div class="news_thumb col-sm-6">
-                <div class="news_image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/artist_thumb_04.jpg);"></div>
+                    <a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
+                    <span><?php the_time('jS F Y'); ?></span>
+                    <p><?php echo excerpt(10); ?></p>
 
-                <a class="title" href="#">Article Title</a><br>
-                <span>8th July 2015</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
-
-                <div class="read_more_container">
-                    <a class="read_more" href="#">read more</a>
+                    <div class="read_more_container">
+                        <a class="read_more" href="<?php the_permalink(); ?>">read more</a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="news_thumb col-sm-6">
-                <div class="news_image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/artist_thumb_04.jpg);"></div>
-
-                <a class="title" href="#">Article Title</a><br>
-                <span>8th July 2015</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
-
-                <div class="read_more_container">
-                    <a class="read_more" href="#">read more</a>
-                </div>
-            </div>
-
-        </div>    
-
+            <?php endwhile; endif; wp_reset_postdata(); ?>    
+            
+        </div>   
         <div class="loader" id="loader_news"></div>
         <a href="javascript:void(0);" class="show_more" id="show_more_news">Show more</a>
     </div>
