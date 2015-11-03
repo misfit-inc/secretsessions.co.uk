@@ -46,8 +46,8 @@ $home_images = $wpdb->get_row($sql);
     <div class="container">     
         <span class="hero-cat"><?php echo $category[0]->cat_name; ?></span>
         <h1><?php the_title(); ?></h1>
-        <span class="hero-aut">by <?php the_author(); ?></span><br>
-        <span class="hero-date"><?php the_time('m/d/Y'); ?></span>
+        <p class="hero-aut">by <span><?php the_author(); ?></span></p>
+        <p class="hero-date"><?php the_time('m/d/Y'); ?></p>
     </div>
 </div>
 <?php endwhile; endif; wp_reset_postdata(); ?>
@@ -102,8 +102,8 @@ $home_images = $wpdb->get_row($sql);
                 <div class="recent-whole-texts">    
                     <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
                     <h3><?php the_title(); ?></h3>
-                    <span class="hero-aut">by <?php the_author(); ?></span><br>
-                    <span class="hero-date"><?php the_time('m/d/Y'); ?></span>
+                    <p class="hero-aut">by <span><?php the_author(); ?></span></p>
+                    <p class="hero-date"><?php the_time('m/d/Y'); ?></p>
                 </div>    
 
                 <div class="read-container">
@@ -115,8 +115,8 @@ $home_images = $wpdb->get_row($sql);
                 <div class="recent-whole-texts">    
                     <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
                     <h3><?php the_title(); ?></h3>
-                    <span class="hero-aut">by <?php the_author(); ?></span><br>
-                    <span class="hero-date"><?php the_time('m/d/Y'); ?></span>
+                    <p class="hero-aut">by <span><?php the_author(); ?></span></p>
+                    <p class="hero-date"><?php the_time('m/d/Y'); ?></p>
                 </div>    
 
                 <div class="read-container">
@@ -128,8 +128,8 @@ $home_images = $wpdb->get_row($sql);
                 <div class="recent-whole-texts">    
                     <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
                     <h3><?php the_title(); ?></h3>
-                    <span class="hero-aut">by <?php the_author(); ?></span><br>
-                    <span class="hero-date"><?php the_time('m/d/Y'); ?></span>
+                    <p class="hero-aut">by <span><?php the_author(); ?></span></p>
+                    <p class="hero-date"><?php the_time('m/d/Y'); ?></p>
                 </div>    
 
                 <div class="read-container">
@@ -153,9 +153,9 @@ $home_images = $wpdb->get_row($sql);
             <h3>Follow</h3>
 
             <ul>
-                <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/images/fb-follow.png"></a></li>
-                <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/images/twitter-follow.png"></a></li>
-                <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/images/instagram-follow.png"></a></li>
+                <li><a href="https://www.facebook.com/SecretSessions" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/fb-follow.png"></a></li>
+                <li><a href="https://twitter.com/secret_sessions" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/twitter-follow.png"></a></li>
+                <li><a href="http://instagram.com/secret_sessions" target="target=_blank"><img src="<?php bloginfo('template_url'); ?>/images/instagram-follow.png"></a></li>
             </ul>
         </div>
     </div>    
@@ -164,7 +164,7 @@ $home_images = $wpdb->get_row($sql);
         <div class="blog-categories">
             <h3>Categories</h3>
 
-            <ul>
+            <!-- <ul>
                 <li><a href="#">Category 1</a></li>
                 <li><a href="#">Category 2</a></li>
                 <li><a href="#">Category 3</a></li>
@@ -172,7 +172,12 @@ $home_images = $wpdb->get_row($sql);
                 <li><a href="#">Category 5</a></li>
                 <li><a href="#">Category 6</a></li>
                 <li><a href="#">Category 7</a></li>
-            </ul>
+            </ul> -->
+            
+            <?php 
+                $args = array('title_li' => __( ' ' ));
+                wp_list_categories($args); 
+            ?>
 
             <a href="#" class="show-categories">Show more</a>
         </div>

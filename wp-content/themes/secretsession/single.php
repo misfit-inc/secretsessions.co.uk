@@ -11,42 +11,21 @@ get_header();
 
 if (is_singular('post')) {
 
-$user_limit = 5;
-$user_page = 0 * $user_limit;
-$video_limit = 3;
-$video_page = 0 * $video_limit;
-$liked_video_limit = 6;
-$liked_video_page = 0 * $video_limit;
-$type = 'sescret_session_home';// custom content type
-$args = array('post_type' => $type, 'post_status' => 'publish');
-$videos = $wpdb->get_results("select * from videos where is_featured=1 order by id desc  limit $video_page,$video_limit;");
-$liked_videos = $wpdb->get_results("select * from videos where is_liked=1 order by id desc  limit $liked_video_page,$liked_video_limit;");
-$my_query = NULL;
-$my_query = new WP_Query($args);//  WP db object
-
-
-
-$field_id = get_cimyFieldValue_fun('SHOW_ON_HOME');
-$sql = "SELECT wp_cimy_uef_data.USER_ID FROM wp_cimy_uef_data
-                                 where wp_cimy_uef_data.FIELD_ID=$field_id and wp_cimy_uef_data.VALUE = 'YES' Limit $user_page,$user_limit";
-$feature_user_id = $wpdb->get_results($sql);
-$sql = "SELECT * FROM secretsession";
-$home_images = $wpdb->get_row($sql);
-
-?>
-
-<?php 
     $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");  
-    $category = get_the_category();    
+    $category = get_the_category();   
+
+    if (have_posts()) : while (have_posts()) : the_post();
+
 ?>   
 <div class="blog-hero" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
     <div class="container">     
         <span class="hero-cat"><?php echo $category[0]->cat_name; ?></span>
         <h1><?php the_title(); ?></h1>
-        <span class="hero-aut">by <?php the_author(); ?></span><br>
-        <span class="hero-date"><?php the_time('m/d/Y'); ?></span>
+        <p class="hero-aut">by <span><?php the_author(); ?></span></p>
+        <p class="hero-date"><?php the_time('m/d/Y'); ?></p>
     </div>
 </div>
+<?php endwhile; endif; wp_reset_query(); ?>
 
 <div class="clear"></div>
 
@@ -75,9 +54,9 @@ $home_images = $wpdb->get_row($sql);
             <h3>Follow</h3>
 
             <ul>
-                <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/images/fb-follow.png"></a></li>
-                <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/images/twitter-follow.png"></a></li>
-                <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/images/instagram-follow.png"></a></li>
+                <li><a href="https://www.facebook.com/SecretSessions" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/fb-follow.png"></a></li>
+                <li><a href="https://twitter.com/secret_sessions" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/twitter-follow.png"></a></li>
+                <li><a href="http://instagram.com/secret_sessions" target="target=_blank"><img src="<?php bloginfo('template_url'); ?>/images/instagram-follow.png"></a></li>
             </ul>
         </div>
     </div>    
@@ -86,7 +65,7 @@ $home_images = $wpdb->get_row($sql);
         <div class="blog-categories">
             <h3>Categories</h3>
 
-            <ul>
+            <!-- <ul>
                 <li><a href="#">Category 1</a></li>
                 <li><a href="#">Category 2</a></li>
                 <li><a href="#">Category 3</a></li>
@@ -94,7 +73,12 @@ $home_images = $wpdb->get_row($sql);
                 <li><a href="#">Category 5</a></li>
                 <li><a href="#">Category 6</a></li>
                 <li><a href="#">Category 7</a></li>
-            </ul>
+            </ul> -->
+
+            <?php 
+                $args = array('title_li' => __( ' ' ));
+                wp_list_categories($args); 
+            ?>
 
             <a href="#" class="show-categories">Show more</a>
         </div>
@@ -140,6 +124,9 @@ $home_images = $wpdb->get_row($sql);
                         <a href="<?php the_permalink(); ?>">
                             <img src="<?php echo $imgsrc[0]; ?>">
                         </a>
+                        <a href="<?php the_permalink(); ?>" class="title"><?php the_title(); ?></a>
+                        <p>by <span><?php the_author(); ?></span></p>
+                        <p><?php the_time('m/d/Y'); ?></p>
                     </div>
                 </div>    
             <?php endwhile; endif; wp_reset_postdata(); ?>    

@@ -286,6 +286,18 @@ if (count($home_images) > 0) {
                 </div>
             </div>
 
+            <div class="news_thumb col-sm-6">
+                <div class="news_image" style="background-image: url(<?php bloginfo('template_url'); ?>/images/artist_thumb_04.jpg);"></div>
+
+                <a class="title" href="#">Article Title</a><br>
+                <span>8th July 2015</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+
+                <div class="read_more_container">
+                    <a class="read_more" href="#">read more</a>
+                </div>
+            </div>
+
         </div>    
 
         <div class="loader" id="loader_news"></div>
