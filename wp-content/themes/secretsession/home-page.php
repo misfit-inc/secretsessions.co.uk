@@ -101,14 +101,25 @@ if (count($home_images) > 0) {
                 ?>
             </ul>
         </div> -->
-        <div class="hero_header" style="background-image: url(<?php bloginfo('template_url'); ?>/images/artist_video_img.jpg);">
-            <div class="container">
-                <div class="hero_text">
-                    <h1>Bringing<br>opportunities<br>to musicians</h1>
-                    <p>Using fan power to bring real life opportunities<br>to the musicians that you love.</p>
-                </div>
-            </div>
-        </div>
+        <div class="hero-slider">
+            <div class="flexslider">
+                <ul class="slides">
+                    <?php
+                        $query = new WP_Query('post_type=slides');
+                        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+                    ?>
+                    <li>
+                        <div class="image-slide" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
+                            <div class="hero-text">
+                                <?php the_content(); ?>
+                            </div>
+                        </div>
+                    </li>
+                    <?php endwhile; endif; wp_reset_postdata(); ?>
+                </ul>
+            </div>    
+        </div>    
+        
     <?php
     }
 }

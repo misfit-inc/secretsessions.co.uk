@@ -42,6 +42,15 @@
 <!-- menu overlay js -->
 <script src="<?php echo get_bloginfo('template_url'); ?>/js/fullscreennav.js"></script>
 <script src="<?php echo get_bloginfo('template_url'); ?>/js/browser-detect.js"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/jquery.min.js"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+jQuery(window).load(function(){
+    $('.flexslider').flexslider({
+        animation: "slide"
+    });
+});
+</script>
 <script>
     jQuery(function () {
 
@@ -114,6 +123,7 @@
             }
         });
     });
+});
 </script>
 </body>
 </html>
