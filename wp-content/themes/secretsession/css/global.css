@@ -791,7 +791,7 @@ a.show_more:hover{
 	position: absolute;
 	height: 100%;
     width: 100%;
-	opacity: 0;
+	opacity: 1;
 	top: 0;
 
 
@@ -809,15 +809,19 @@ a.show_more:hover{
 	display: block;
 	height: 100%;
 	color: #fff;
+	opacity: 0;
 }
 
 	.recent-whole:hover .recent-whole-texts {
-		opacity: 0;
+		display: none;
 	}
 	
 	.recent-whole:hover .read-container {
-		background-color: #f16553;
-		opacity: 0.8;
+		background-color: rgba(241, 101, 83, 0.8);
+	}
+
+	.recent-whole:hover .read-container a {
+		opacity: 1;
 	}
 
 .recent-whole h3 {
@@ -841,16 +845,11 @@ a.show_more:hover{
 	height: 350px;
 }
 
-.recent-half-texts {
-	padding: 0 30px;
-	opacity: 1;
-}
-
 .recent-half .read-container {
 	position: absolute;
 	height: 100%;
     width: 100%;
-	opacity: 0;
+	opacity: 1;
 	top: 0;
 
 
@@ -868,15 +867,19 @@ a.show_more:hover{
 	display: block;
 	height: 100%;
 	color: #fff;
+	opacity: 0;
 }
 
-	.recent-half:hover .recent-half-texts {
-		opacity: 0;
+	.recent-half:hover .recent-whole-texts {
+		display: none;
 	}
 	
 	.recent-half:hover .read-container {
-		background-color: #f16553;
-		opacity: 0.8;
+		background-color: rgba(241, 101, 83, 0.8);
+	}
+
+	.recent-half:hover .read-container a {
+		opacity: 1;
 	}
 
 .recent-half .recent-cat {
