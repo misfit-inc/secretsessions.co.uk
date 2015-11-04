@@ -277,7 +277,9 @@ if (count($home_images) > 0) {
                 if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
             ?>
                 <div class="news_thumb col-sm-6">
-                    <div class="news_image" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="news_image" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+                    </a>    
 
                     <a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
                     <span><?php the_time('jS F Y'); ?></span>

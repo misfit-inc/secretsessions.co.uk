@@ -843,7 +843,7 @@ a.show_more:hover{
 
 .recent-half-texts {
 	padding: 0 30px;
-	opacity: 1
+	opacity: 1;
 }
 
 .recent-half .read-container {
@@ -876,7 +876,7 @@ a.show_more:hover{
 	
 	.recent-half:hover .read-container {
 		background-color: #f16553;
-		opacity: 1;
+		opacity: 0.8;
 	}
 
 .recent-half .recent-cat {
