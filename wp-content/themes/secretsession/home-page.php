@@ -289,7 +289,7 @@ if (count($home_images) > 0) {
             ?>
                 <div class="news_thumb col-sm-6">
                     <a href="<?php the_permalink(); ?>">
-                        <div class="news_image" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+                        <div class="news_image" style="background-image: url(<?php if ($imgsrc[0]) { echo $imgsrc[0]; } else { bloginfo('template_url'); ?>/images/no-image.jpg<?php } ?>);"></div>
                     </a>    
 
                     <a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
