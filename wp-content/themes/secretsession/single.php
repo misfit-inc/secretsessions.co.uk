@@ -17,7 +17,7 @@ if (is_singular('post')) {
     if (have_posts()) : while (have_posts()) : the_post();
 
 ?>   
-<div class="blog-hero" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
+<div class="blog-hero" style="background-image: url(<?php if ($imgsrc[0]) { echo $imgsrc[0]; } else { bloginfo('template_url'); ?>/images/no-image.jpg<?php } ?>);">
     <div class="container">     
         <span class="hero-cat"><?php echo $category[0]->cat_name; ?></span>
         <h1><?php the_title(); ?></h1>
@@ -127,7 +127,12 @@ if (is_singular('post')) {
                         <p><?php the_time('m/d/y'); ?></p>
                     </div>
                 </div>    
-            <?php endwhile; endif; wp_reset_postdata(); ?>    
+            
+            <?php endwhile; else: ?>
+            
+                <h1 class="no-posts">Sorry there are no posts available!</h1>       
+
+            <?php endif; wp_reset_postdata(); ?>    
         </div>
 
     </div>

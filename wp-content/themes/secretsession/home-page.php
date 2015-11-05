@@ -109,7 +109,7 @@ if (count($home_images) > 0) {
                         if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
                     ?>
                     <li>
-                        <div class="image-slide" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
+                        <div class="image-slide" style="background-image: url(<?php echo $imgsrc[0]; } else { bloginfo('template_url'); ?>/images/no-image.jpg<?php } ?>);">
                             <div class="hero-text">
                                 <?php the_content(); ?>
                             </div>

@@ -96,52 +96,56 @@ $home_images = $wpdb->get_row($sql);
             $counter = 1;
             if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");  
             $category = get_the_category();   
-            if ($counter == 1) {
+                if ($counter == 1) {
         ?> 
-            <div class="recent-whole" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
-                <div class="recent-whole-texts">    
-                    <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
-                    <h3><?php the_title(); ?></h3>
-                    <p class="hero-aut">by <span><?php the_author(); ?></span></p>
-                    <p class="hero-date"><?php the_time('m/d/y'); ?></p>
-                </div>    
+                    <div class="recent-whole" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
+                        <div class="recent-whole-texts">    
+                            <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
+                            <h3><?php the_title(); ?></h3>
+                            <p class="hero-aut">by <span><?php the_author(); ?></span></p>
+                            <p class="hero-date"><?php the_time('m/d/y'); ?></p>
+                        </div>    
 
-                <div class="read-container">
-                    <a href="<?php the_permalink(); ?>">Read</a>
-                </div>
-            </div>
-        <?php } else if (($counter > 1) && ($counter % 2 == 0)) { ?>    
-            <div class="recent-half1 recent-half" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
-                <div class="recent-whole-texts">    
-                    <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
-                    <h3><?php the_title(); ?></h3>
-                    <p class="hero-aut">by <span><?php the_author(); ?></span></p>
-                    <p class="hero-date"><?php the_time('m/d/y'); ?></p>
-                </div>    
+                        <div class="read-container">
+                            <a href="<?php the_permalink(); ?>">Read</a>
+                        </div>
+                    </div>
+                <?php } else if (($counter > 1) && ($counter % 2 == 0)) { ?>    
+                    <div class="recent-half1 recent-half" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
+                        <div class="recent-whole-texts">    
+                            <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
+                            <h3><?php the_title(); ?></h3>
+                            <p class="hero-aut">by <span><?php the_author(); ?></span></p>
+                            <p class="hero-date"><?php the_time('m/d/y'); ?></p>
+                        </div>    
 
-                <div class="read-container">
-                    <a href="<?php the_permalink(); ?>">Read</a>
-                </div>
-            </div>
-        <?php } else { ?>    
-            <div class="recent-half2 recent-half" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
-                <div class="recent-whole-texts">    
-                    <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
-                    <h3><?php the_title(); ?></h3>
-                    <p class="hero-aut">by <span><?php the_author(); ?></span></p>
-                    <p class="hero-date"><?php the_time('m/d/y'); ?></p>
-                </div>    
+                        <div class="read-container">
+                            <a href="<?php the_permalink(); ?>">Read</a>
+                        </div>
+                    </div>
+                <?php } else { ?>    
+                    <div class="recent-half2 recent-half" style="background-image: url(<?php echo $imgsrc[0]; ?>);">
+                        <div class="recent-whole-texts">    
+                            <span class="recent-cat"><?php echo $category[0]->cat_name; ?></span>
+                            <h3><?php the_title(); ?></h3>
+                            <p class="hero-aut">by <span><?php the_author(); ?></span></p>
+                            <p class="hero-date"><?php the_time('m/d/y'); ?></p>
+                        </div>    
 
-                <div class="read-container">
-                    <a href="<?php the_permalink(); ?>">Read</a>
-                </div>
-            </div>
+                        <div class="read-container">
+                            <a href="<?php the_permalink(); ?>">Read</a>
+                        </div>
+                    </div>
 
-        <?php } $counter++; endwhile; endif; wp_reset_postdata(); ?>
+        <?php } $counter++; endwhile; else: ?>
+            
+            <h1 class="no-posts">Sorry there are no posts available!</h1>       
+
+        <?php endif; wp_reset_postdata(); ?>  
 
         <div class="clear"></div>
 
-        <a href="#" class="show-recent-posts">Show more</a>
+        <!-- <a href="#" class="show-recent-posts">Show more</a> -->
     </div>
 
 </div>
