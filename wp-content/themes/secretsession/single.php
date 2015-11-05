@@ -80,7 +80,7 @@ if (is_singular('post')) {
                 wp_list_categories($args); 
             ?>
 
-            <a href="#" class="show-categories">Show more</a>
+            <!-- <a href="#" class="show-categories">Show more</a> -->
         </div>
     </div>
 
