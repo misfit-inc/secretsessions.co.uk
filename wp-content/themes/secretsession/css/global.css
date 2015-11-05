@@ -488,7 +488,7 @@ a.show_more:hover{
 }
 .artist_thumb > a img,
 .author-thumb > a img {
-	width:100% ;
+	width:100%;
 	margin-bottom: 26px;
 	border-radius: 200px;
 	-moz-border-radius: 200px;
@@ -499,6 +499,9 @@ a.show_more:hover{
 	-o-transition: all 0.4s;
 	-ms-transition: all 0.4s;
 	transition: all 0.4s;
+}
+.author-thumb > a img {
+	height: 220px;
 }
 .artist_thumb > a:hover img {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
@@ -762,6 +765,7 @@ a.show_more:hover{
 
 .recent-posts {
 	text-align: center;
+	padding: 0 0 100px;
 	max-width: 1200px;
 	margin: 0 auto;
 	width: 82%;

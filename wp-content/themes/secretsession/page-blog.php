@@ -36,7 +36,7 @@ $home_images = $wpdb->get_row($sql);
     $query = new WP_Query(
         array (
             'post_type' => 'post',
-            'showposts' => '1'
+            'posts_per_page' => '1'
         )
     );
     if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");  
@@ -183,7 +183,7 @@ $home_images = $wpdb->get_row($sql);
                 wp_list_categories($args); 
             ?>
 
-            <a href="#" class="show-categories">Show more</a>
+            <!-- <a href="#" class="show-categories">Show more</a> -->
         </div>
     </div>
 
