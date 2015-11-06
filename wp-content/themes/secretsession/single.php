@@ -41,9 +41,19 @@ if (is_singular('post')) {
         <div class="blog-content">
             <div class="text-container">        
                 <?php the_content(); ?>
+
+                <ul>
+                    <li class="fb-share"><a href="#">Share</a><span>200</span></li>
+                    <li class="tweet"><a href="#">Tweet</a><span>100</span></li>
+                    <li>Share the love</li>
+                </ul>
             </div>
         </div> 
-    <?php endwhile; endif; wp_reset_query(); ?>
+    <?php endwhile; else: ?>
+            
+        <h1 class="no-posts">Sorry there are no posts available!</h1>       
+
+    <?php endif; wp_reset_postdata(); ?> 
 
 </div>
 

@@ -79,7 +79,11 @@ $home_images = $wpdb->get_row($sql);
                 <li class="tweet"><a href="#">Tweet</a><span>100</span></li>
                 <li>Share the love</li>
             </ul>
-            <?php endwhile; endif; wp_reset_postdata(); ?>
+            <?php endwhile; else: ?>
+            
+                <h1 class="no-posts">Sorry there are no posts available!</h1>       
+
+            <?php endif; wp_reset_postdata(); ?>
         </div>
     </div>
 
