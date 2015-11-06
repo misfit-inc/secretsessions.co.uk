@@ -114,14 +114,14 @@ wp_insert_term(
 
 add_action( 'init', 'creates_post_types' );
 function creates_post_types() {
-  register_post_type( 'slides',
+  register_post_type( 'homepage-slides',
     array(
       'labels' => array(
-        'name' => __( 'Slides' ),
-        'singular_name' => __( 'Slides' )
+        'name' => __( 'Homepage Slides' ),
+        'singular_name' => __( 'Homepage Slides' )
       ),
       'public' => true,
-      'rewrite' => array('slug' => 'slides'),
+      'rewrite' => array('slug' => 'homepage-slides'),
       'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
       'supports' => array('title','custom-fields','editor','category','author','thumbnail')
     )

@@ -138,10 +138,17 @@ p, h1, h2, h3, h4, h5, h6 {
 	bottom: 15px;
 }
 .hero-text {
-	position: absolute;
+	/*position: absolute;
 	bottom: 130px;
     left: 100px;
-    width: 60%;
+    width: 100%;
+    max-width: 60%;*/
+    position: relative;
+    max-width: 1200px;
+    width: 85%;
+    margin: 0 auto;
+    padding: 200px 0 0;
+
 }
 .hero-slider h1 {
 	font-family: 'interface-regularuploadedfile';
@@ -149,6 +156,7 @@ p, h1, h2, h3, h4, h5, h6 {
     line-height: 70px;
 	font-size: 80px;
 	color: #fff;
+	width: 100%;
 }
 .hero-slider p {
 	padding: 10px 0 0 0;

@@ -29,6 +29,7 @@
         width: 20%;
         float: left;
     }
+
 }
 
 /* media queries */
@@ -823,3 +824,60 @@ ul.login_ftr_social_icons li {
 }
 
 
+/* homepage slider */
+
+@media only screen and (min-width : 1200px) {
+    .hero-slider h1 {
+    	width: 80%;
+    }
+}
+
+@media only screen and (max-width : 800px) {
+    .hero-slider h1 {
+    	line-height: 65px;
+    	font-size: 75px;
+    	width: 100%;
+    }
+}
+
+@media only screen and (max-width : 740px) {
+	.hero-text {
+		padding: 100px 0 0;
+	}
+
+    .hero-slider h1 {
+    	line-height: 65px;
+    	font-size: 65px;
+    }
+}
+
+@media only screen and (max-width : 600px) {
+	.hero-text {
+		padding: 50px 0 0;
+	}
+
+    .hero-slider h1 {
+    	line-height: 48px;
+    	font-size: 50px;
+    }
+
+    .image-slide {
+    	height: calc(500px - 60px);
+    }
+}
+
+@media only screen and (max-width : 399px) {
+	.hero-text {
+		padding: 50px 0 0;
+	}
+
+    .hero-slider h1 {
+    	line-height: 36px;
+    	font-size: 38px;
+    }
+
+    .image-slide {
+    	height: calc(400px - 60px);
+    }
+
+}

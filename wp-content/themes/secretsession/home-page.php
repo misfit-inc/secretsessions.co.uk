@@ -105,12 +105,13 @@ if (count($home_images) > 0) {
             <div class="flexslider">
                 <ul class="slides">
                     <?php
-                        $query = new WP_Query('post_type=slides');
+                        $query = new WP_Query('post_type=homepage-slides');
                         if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
                     ?>
                     <li>
                         <div class="image-slide" style="background-image: url(<?php if ($imgsrc[0]) { echo $imgsrc[0]; } else { bloginfo('template_url'); ?>/images/no-image.jpg<?php } ?>);">
                             <div class="hero-text">
+                                <h1><?php the_title(); ?></h1>
                                 <?php the_content(); ?>
                             </div>
                         </div>
