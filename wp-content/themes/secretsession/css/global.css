@@ -508,9 +508,6 @@ a.show_more:hover{
 	-ms-transition: all 0.4s;
 	transition: all 0.4s;
 }
-.author-thumb > a img {
-	height: 220px;
-}
 .artist_thumb > a:hover img {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
 	filter: alpha(opacity=20);
@@ -610,10 +607,21 @@ a.show_more:hover{
 }
 
 /*blog*/
+.page-template-page-blog-php {
+	background-color: #ebe3e3;
+}
+
 .page-template-page-blog-php .selected_artists {
 	border-top: 1px solid #e4d9d9;
 	border-bottom: none;
 	margin-bottom: 0;
+}
+
+.other-posts,
+.page-template-page-blog-php .selected_artists,
+.page-template-page-blog-php .footer,
+.single-format-standard .footer {
+	background-color: #f5f0f0;
 }
 
 .blog-hero .container {
@@ -726,6 +734,8 @@ a.show_more:hover{
 
 	.blog-content .text-container img {
 		margin-bottom: 50px;
+		height: 100%;
+		width: 100%;
 	}
 
 .blog-readmore {
@@ -1041,6 +1051,10 @@ a.show_more:hover{
 }
 
 /*single blog*/
+.single-format-standard {
+	background-color: #ebe3e3;
+}
+
 .single-format-standard .blog-content p {
 	line-height: 35px;
 }

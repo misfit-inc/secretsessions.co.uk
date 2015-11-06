@@ -54,6 +54,7 @@ $home_images = $wpdb->get_row($sql);
 
 <div class="clear"></div>
 
+<div style="background-color: #ebe3e3;">
 <div class="blog-posts">
 
     <div style="border-bottom: 1px solid #e4d9d9; padding-bottom: 50px;">
@@ -200,6 +201,7 @@ $home_images = $wpdb->get_row($sql);
 </div>
 
 <div class="clear"></div>
+</div>
 
 <div class="selected_artists most_share_artist">
     <div class="container">
