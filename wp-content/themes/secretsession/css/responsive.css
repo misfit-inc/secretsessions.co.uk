@@ -848,6 +848,15 @@ ul.login_ftr_social_icons li {
 
 }
 
+
+@media only screen and (max-width : 980px) {
+    .blog-social ul li {
+    	padding: 5px 0;
+    	display: block;
+    }
+
+}
+
 @media only screen and (max-width : 800px) {
     .hero-slider h1 {
     	line-height: 65px;
