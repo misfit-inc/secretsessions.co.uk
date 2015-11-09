@@ -738,7 +738,7 @@ a.show_more:hover{
 	}
 
 .blog-readmore {
-    padding: 20px 0 45px 0;
+    margin: 20px 0 45px 0;
     display: inline-block;
     font-size: 24px;
     color: #ff6450;
