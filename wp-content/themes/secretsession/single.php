@@ -130,7 +130,7 @@ if (is_singular('post')) {
                 <div class="col-md-3 col-sm-3 col-xs-6 col-md-15">
                     <div class="author-thumb">
                         <a href="<?php the_permalink(); ?>">
-                            <img src="<?php echo $imgsrc[0]; ?>">
+                            <img src="<?php echo tt($imgsrc[0], 1000, 1000); ?>">
                         </a>
                         <a href="<?php the_permalink(); ?>" class="title"><?php the_title(); ?></a>
                         <p>by <span><?php the_author(); ?></span></p>

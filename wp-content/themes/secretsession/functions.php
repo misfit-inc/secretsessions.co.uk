@@ -1335,6 +1335,10 @@
 	 */
 	require get_template_directory().'/inc/customizer.php';
 
+function tt($image,$width,$height){
+	return bloginfo('template_url') . "/library/thumb.php?src=$image&w=$width&h=$height";
+}
+
 /* ................. CUSTOM POST TYPES .................... */
 /* Below is an include to a default custom post type.*/
 include(TEMPLATEPATH . '/library/post_types.php');
