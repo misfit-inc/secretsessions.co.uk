@@ -36,15 +36,41 @@ if (is_singular('post')) {
         <li class="tweet"><a href="#">Tweet</a><span>100</span></li>
         <li>Share the love</li>
     </ul> -->
-
+	
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class="blog-content">
-            <div class="text-container">        
+        
+		<?php 
+			
+			$url = get_permalink();
+			
+			// FACEBOOK & TWITTER API
+			
+			$fb_api = file_get_contents('https://api.facebook.com/method/links.getStats?urls=' . $url . '&format=json');
+			$fb_api = json_decode($fb_api, true);
+			$fb_count = $fb_api[0]['share_count'];
+			
+			$tw_api = file_get_contents('http://urls.api.twitter.com/1/urls/count.json?url=' . $url);
+			$tw_api = json_decode($tw_api, true);
+			$tw_count = $tw_api['count'];
+			
+			// URL ENCODER
+			// https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&display=popup&ref=plugin&src=share_button
+			// https://twitter.com/intent/tweet?url=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&text=Twitter%20Buttons%20%7C%20About
+			
+			$url_encode = urlencode($url);
+			$title_encode = urlencode(get_the_title());
+			
+			$fb_link = 'https://www.facebook.com/sharer/sharer.php?u=' . $url_encode;
+			$tw_link = 'https://twitter.com/intent/tweet?url=' . $url_encode . '&text=' . $title_encode;
+		?>
+		
+		<div class="blog-content">
+            <div class="text-container">
                 <?php the_content(); ?>
 
                 <ul>
-                    <li class="fb-share"><a href="#">Share</a><span>200</span></li>
-                    <li class="tweet"><a href="#">Tweet</a><span>100</span></li>
+                    <li class="fb-share"><a target="_blank" href="<?php echo $fb_link; ?>">Share</a><span><?php echo $fb_count; ?></span></li>
+                    <li class="tweet"><a target="_blank" href="<?php echo $tw_link; ?>">Tweet</a><span><?php echo $tw_count; ?></span></li>
                     <li>Share the love</li>
                 </ul>
             </div>
@@ -59,7 +85,7 @@ if (is_singular('post')) {
 
 <div class="blog-sidebar">
 
-    <div style="border-bottom: 1px solid #e4d9d9; padding: 50px 0;">    
+    <div style="border-bottom: 1px solid #e4d9d9; padding: 50px 0;">
         <div class="blog-social">
             <h3>Follow</h3>
 
@@ -140,7 +166,7 @@ if (is_singular('post')) {
             
             <?php endwhile; else: ?>
             
-                <h1 class="no-posts">Sorry there are no posts available!</h1>       
+                <h1 class="no-posts">Sorry there are no posts available!</h1>
 
             <?php endif; wp_reset_postdata(); ?>    
         </div>
