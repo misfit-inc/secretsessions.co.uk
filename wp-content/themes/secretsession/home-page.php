@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: home page
+Template Name: home page 1
  *
  * @package WordPress
  * @subpackage Secret Session
