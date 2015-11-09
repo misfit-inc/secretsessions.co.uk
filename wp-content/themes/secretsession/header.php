@@ -11,7 +11,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
-	<title>Secret Sessions</title>
+	<title>Secret Sessions<?php // wp_title(''); ?></title>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,9 +37,13 @@
 	<link href="<?php echo get_bloginfo('template_url'); ?>/css/developer.css" rel="stylesheet">
 	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
 	<script src="<?php echo get_bloginfo('template_url'); ?>/js/jquery.min.js"></script>
+	
+	
     <meta property="og:title" content="Secret Sessions" /> 
     <meta property="og:image" content="<?php echo get_bloginfo('template_url'); ?>/images/SS_black_Square1.jpg" /> 
     <meta property="og:description" content="Secret Sessions - a music discovery platform that puts artists and their fans in control. Turning musical talent into industry success." /> 
+	
+	
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class( $class ); ?> >
