@@ -39,10 +39,6 @@
 	<script src="<?php echo get_bloginfo('template_url'); ?>/js/jquery.min.js"></script>
 	
 	
-    <meta property="og:title" content="Secret Sessions" /> 
-    <meta property="og:image" content="<?php echo get_bloginfo('template_url'); ?>/images/SS_black_Square1.jpg" /> 
-    <meta property="og:description" content="Secret Sessions - a music discovery platform that puts artists and their fans in control. Turning musical talent into industry success." /> 
-	
 	
 	<?php wp_head(); ?>
 </head>
