@@ -11,7 +11,15 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
-	<title>Secret Sessions<?php // wp_title(''); ?></title>
+	<title>
+		<?php global $page, $paged; wp_title( '|', true, 'right' );
+	
+		
+		// Add a page number if necessary:
+		if ( $paged >= 2 || $page >= 2 )
+			echo ' | ' . sprintf( __( 'Page %s', 'cebolang' ), max( $paged, $page ) );
+		?>
+	</title>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -1011,6 +1011,7 @@ a.show_more:hover{
 	font-size: 38px;
 }
 
+/*
 #name,
 #email {
 	background-color: #cecece;
@@ -1044,6 +1045,27 @@ a.show_more:hover{
 #email:-ms-input-placeholder {
 	color: #fff;
 }
+*/
+
+.newsletterform input::-webkit-input-placeholder { color: #fff;}
+.newsletterform input:-moz-placeholder { color: #fff;}
+.newsletterform input:-ms-input-placeholder { color: #fff;}
+
+.newsletterform input {
+	background-color: #cecece;
+	padding: 25px 30px;
+	margin: 0 0 5px;
+	font-size: 24px;
+	color: #fff;
+	width: 100%;
+}
+
+.newsletterform #mc-embedded-subscribe {
+	background-color: #ff8373;
+	margin: 0;
+}
+
+
 
 .more-link {
 	display: none;
