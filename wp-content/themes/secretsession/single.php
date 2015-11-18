@@ -125,8 +125,9 @@ if (is_singular('post')) {
         <h3>Newsletter</h3>
 		
 		<div id="mc_embed_signup" class="newsletterform">
-			<form action="//secretsessions.us2.list-manage.com/subscribe/post?u=e3afe3ac380356143f9060ee9&amp;id=88da076fbe" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+			<form action="//secretsessions.us2.list-manage.com/subscribe/post?u=e3afe3ac380356143f9060ee9&amp;id=d481216023" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 				<div id="mc_embed_signup_scroll">
+				
 					<div class="mc-field-group">
 						<input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="Name">
 					</div>
@@ -139,11 +140,10 @@ if (is_singular('post')) {
 						<div class="response" id="mce-error-response" style="display:none"></div>
 						<div class="response" id="mce-success-response" style="display:none"></div>
 					</div>
-				
+					
 					<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-					<div style="position: absolute; left: -5000px;"><input type="text" name="b_e3afe3ac380356143f9060ee9_88da076fbe" tabindex="-1" value=""></div>
+					<div style="position: absolute; left: -5000px;"><input type="text" name="b_e3afe3ac380356143f9060ee9_d481216023" tabindex="-1" value=""></div>
 					<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-				
 				</div>
 			</form>
 		</div>
