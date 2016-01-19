@@ -67,7 +67,7 @@ if (count($home_images) > 0) {
     <?php
     } else {
         ?>
-        <!-- <div id="thumb-grid" class="thumb-grid-hover">
+        <div id="thumb-grid" class="thumb-grid-hover">
             <ul id="side">
                 <?php
                 $field_id = get_cimyFieldValue_fun('PROFILE_PHOTO');
@@ -75,7 +75,7 @@ if (count($home_images) > 0) {
                 $profile_images = $wpdb->get_results($sql);
                 $i = 0;
                 foreach ($profile_images as $artist_image) {
-                    //if (getimagesize($artist_image->VALUE) !== FALSE) {
+                    if (getimagesize($artist_image->VALUE) !== FALSE) {
                         ?>
                         <?php $i++; ?>
                         <li class="thumb">
@@ -96,12 +96,12 @@ if (count($home_images) > 0) {
                         </li>
                     <?php
                     
-					//}
+					}
                 }
                 ?>
             </ul>
-        </div> -->
-        <div class="hero-slider">
+        </div>
+        <!-- <div class="hero-slider">
             <div class="flexslider">
                 <ul class="slides">
                     <?php
@@ -119,7 +119,7 @@ if (count($home_images) > 0) {
                     <?php endwhile; endif; wp_reset_postdata(); ?>
                 </ul>
             </div>    
-        </div>    
+        </div> -->    
         
     <?php
     }
