@@ -361,6 +361,8 @@
                         <input type="radio" value="0" name="static_dynamic" <?php if($ss_video_flag==0){ ?> checked="checked" <?php } ?>/>
                     	<label for="static_dynamic">Dynamic</label>
                         <input type="radio" value="1" name="static_dynamic" <?php if($ss_video_flag==1){ ?> checked="checked" <?php } ?> />
+                        <label for="static_dynamic">Slider</label>
+                        <input type="radio" value="2" name="static_dynamic" <?php if($ss_video_flag==2){ ?> checked="checked" <?php } ?> />
                     </td>
                 </tr>
                 </tbody>

@@ -65,43 +65,42 @@ if (count($home_images) > 0) {
             </div>
         </div>
     <?php
-    } else {
-        ?>
+    } else if ($dynamic_static == 1) { ?>
         <div id="thumb-grid" class="thumb-grid-hover">
             <ul id="side">
                 <?php
-                $field_id = get_cimyFieldValue_fun('PROFILE_PHOTO');
-                $sql = "SELECT * FROM wp_cimy_uef_data where FIELD_ID=$field_id and VALUE!='' ORDER BY RAND() limit 0,64";
-                $profile_images = $wpdb->get_results($sql);
-                $i = 0;
-                foreach ($profile_images as $artist_image) {
-                    if (getimagesize($artist_image->VALUE) !== FALSE) {
-                        ?>
-                        <?php $i++; ?>
-                        <li class="thumb">
-                            <?php
-                            $user_url_name = get_cimyFieldValue($artist_image->USER_ID, 'URL_NAME');
-                            if (!empty($user_url_name)) {
-                                $user_link = home_url("artist/$user_url_name");
-                            } else {
-                                $user_link = add_query_arg('user_id', $artist_image->USER_ID, get_permalink(get_page_by_path('user-profile-view')));
-                            }
+                    $field_id = get_cimyFieldValue_fun('PROFILE_PHOTO');
+                    $sql = "SELECT * FROM wp_cimy_uef_data where FIELD_ID=$field_id and VALUE!='' ORDER BY RAND() limit 0,64";
+                    $profile_images = $wpdb->get_results($sql);
+                    $i = 0;
+                    foreach ($profile_images as $artist_image) {
+                        if (getimagesize($artist_image->VALUE) !== FALSE) {
                             ?>
-                            <a id="ac_<?php echo $artist_image->USER_ID . '_' . $i; ?>"
-                               href="<?php echo $user_link; ?>">
-                                <span id="<?php echo $artist_image->USER_ID . '_' . $i; ?>"
-                                      class="spanhide">view artist</span>
-                                <img src="<?php echo $artist_image->VALUE; ?>" alt="">
-                            </a>
-                        </li>
-                    <?php
-                    
-					}
-                }
+                            <?php $i++; ?>
+                            <li class="thumb">
+                                <?php
+                                $user_url_name = get_cimyFieldValue($artist_image->USER_ID, 'URL_NAME');
+                                if (!empty($user_url_name)) {
+                                    $user_link = home_url("artist/$user_url_name");
+                                } else {
+                                    $user_link = add_query_arg('user_id', $artist_image->USER_ID, get_permalink(get_page_by_path('user-profile-view')));
+                                }
+                                ?>
+                                <a id="ac_<?php echo $artist_image->USER_ID . '_' . $i; ?>"
+                                   href="<?php echo $user_link; ?>">
+                                    <span id="<?php echo $artist_image->USER_ID . '_' . $i; ?>"
+                                          class="spanhide">view artist</span>
+                                    <img src="<?php echo $artist_image->VALUE; ?>" alt="">
+                                </a>
+                            </li>
+                        <?php
+                        }
+                    }
                 ?>
             </ul>
         </div>
-        <!-- <div class="hero-slider">
+    <?php } else { ?>
+        <div class="hero-slider">
             <div class="flexslider">
                 <ul class="slides">
                     <?php
@@ -119,8 +118,7 @@ if (count($home_images) > 0) {
                     <?php endwhile; endif; wp_reset_postdata(); ?>
                 </ul>
             </div>    
-        </div> -->    
-        
+        </div>    
     <?php
     }
 }
