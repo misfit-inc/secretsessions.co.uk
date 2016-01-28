@@ -150,6 +150,20 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 200px 0 0;
 
 }
+.hero-text a {
+	color: #ff6450;
+
+
+	transition: 0.4s all ease-in-out;
+	-o-transition: 0.4s all ease-in-out;
+	-moz-transition: 0.4s all ease-in-out;
+	-webkit-transition: 0.4s all ease-in-out;
+}
+
+.hero-text a:hover {
+	opacity: 0.8;
+}
+
 .hero-slider h1 {
 	font-family: 'interface-regularuploadedfile';
 	letter-spacing: 4px;
